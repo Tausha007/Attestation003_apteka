@@ -16,12 +16,12 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AptekaTest {
+public class AptekaTest extends WebTest{
     MainPage mainPage = new MainPage();
     CityPopup cityPopup = new CityPopup();
     FindPage findPage = new FindPage();
     ProductPage productPage = new ProductPage();
-    String titleProduct = "Âèòàìèí";
+    String titleProduct = "Ã‚Ã¨Ã²Ã Ã¬Ã¨Ã­";
 
 
 
@@ -36,46 +36,46 @@ public class AptekaTest {
     }
 
     @Test
-    @DisplayName("Ïîèñê òîâàðîâ")
-    @Feature("Ïîèñê")
-    @Story("Ïðîâåðêà êîëè÷åñòâà òîâàðîâ â ïîèñêîâîé âûäà÷å")
+    @DisplayName("ÃÃ®Ã¨Ã±Ãª Ã²Ã®Ã¢Ã Ã°Ã®Ã¢")
+    @Feature("ÃÃ®Ã¨Ã±Ãª")
+    @Story("ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã²Ã®Ã¢Ã Ã°Ã®Ã¢ Ã¢ Ã¯Ã®Ã¨Ã±ÃªÃ®Ã¢Ã®Ã© Ã¢Ã»Ã¤Ã Ã·Ã¥")
     public void shouldfindTest(){
-        step("Â ïîèñêîâîé ñòðîêå ââåäèòå íàçâàíèå òîâàðà", () -> {
+        step("Ã‚ Ã¯Ã®Ã¨Ã±ÃªÃ®Ã¢Ã®Ã© Ã±Ã²Ã°Ã®ÃªÃ¥ Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã Ã§Ã¢Ã Ã­Ã¨Ã¥ Ã²Ã®Ã¢Ã Ã°Ã ", () -> {
             mainPage.inputFind.setValue(titleProduct).pressEnter();
         });
 
-        step("Ïðîâåðèòü, ÷òî ïðîèçîøåë ïåðåõîä íà ñòðàíèöó ïîèñêà", () -> {
-            findPage.header.shouldHave(text("Ïîèñê"));
+        step("ÃÃ°Ã®Ã¢Ã¥Ã°Ã¨Ã²Ã¼, Ã·Ã²Ã® Ã¯Ã°Ã®Ã¨Ã§Ã®Ã¸Ã¥Ã« Ã¯Ã¥Ã°Ã¥ÃµÃ®Ã¤ Ã­Ã  Ã±Ã²Ã°Ã Ã­Ã¨Ã¶Ã³ Ã¯Ã®Ã¨Ã±ÃªÃ ", () -> {
+            findPage.header.shouldHave(text("ÃÃ®Ã¨Ã±Ãª"));
         });
 
-        step("Íàéäåííûé òîâàð ñîäåðæèò èñêîìûé òåêñò", () -> {
+        step("ÃÃ Ã©Ã¤Ã¥Ã­Ã­Ã»Ã© Ã²Ã®Ã¢Ã Ã° Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã² Ã¨Ã±ÃªÃ®Ã¬Ã»Ã© Ã²Ã¥ÃªÃ±Ã²", () -> {
             productPage.product.shouldHave(text(titleProduct));
         });
 
-        step("Ïðîâåðèòü, ÷òî êîëè÷åñòâî îòîáðàæàåìûõ òîâàðîâ ðàâíî 5", () -> {
+        step("ÃÃ°Ã®Ã¢Ã¥Ã°Ã¨Ã²Ã¼, Ã·Ã²Ã® ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã®Ã²Ã®Ã¡Ã°Ã Ã¦Ã Ã¥Ã¬Ã»Ãµ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢ Ã°Ã Ã¢Ã­Ã® 5", () -> {
             findPage.cartProductonPage.shouldHave(CollectionCondition.size(5));
         });
 
     }
 
     @Test
-    @DisplayName("Äîáàâëåíèå òîâàðà â îòëîæåííûé ñïèñîê")
-    @Feature("Îòëîæèòü òîâàð")
-    @Story("Ïðîâåðêà, ÷òî âûáðàííûé òîâàð äîáàâëÿåòñÿ â ñïèñîê îòëîæåííûõ òîâàðîâ ")
+    @DisplayName("Ã„Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã²Ã®Ã¢Ã Ã°Ã  Ã¢ Ã®Ã²Ã«Ã®Ã¦Ã¥Ã­Ã­Ã»Ã© Ã±Ã¯Ã¨Ã±Ã®Ãª")
+    @Feature("ÃŽÃ²Ã«Ã®Ã¦Ã¨Ã²Ã¼ Ã²Ã®Ã¢Ã Ã°")
+    @Story("ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ , Ã·Ã²Ã® Ã¢Ã»Ã¡Ã°Ã Ã­Ã­Ã»Ã© Ã²Ã®Ã¢Ã Ã° Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã¢ Ã±Ã¯Ã¨Ã±Ã®Ãª Ã®Ã²Ã«Ã®Ã¦Ã¥Ã­Ã­Ã»Ãµ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢ ")
     public void shouldAddWishListTest(){
-        step("Ïåðåõîä ïî ññûëêå âûáðàííîãî òîâàðà", () -> {
+        step("ÃÃ¥Ã°Ã¥ÃµÃ®Ã¤ Ã¯Ã® Ã±Ã±Ã»Ã«ÃªÃ¥ Ã¢Ã»Ã¡Ã°Ã Ã­Ã­Ã®Ã£Ã® Ã²Ã®Ã¢Ã Ã°Ã ", () -> {
             open(baseUrl+"/catalog/mama-i-malysh/igrushki-prorezyvateli-dlya-zubov-pustyshki/104433/");
         });
 
-        step("Ïîìåòèòü òîâàð êàê îòëîæåííûé", () -> {
+        step("ÃÃ®Ã¬Ã¥Ã²Ã¨Ã²Ã¼ Ã²Ã®Ã¢Ã Ã° ÃªÃ Ãª Ã®Ã²Ã«Ã®Ã¦Ã¥Ã­Ã­Ã»Ã©", () -> {
             productPage.wishlist.click();
         });
 
-        step("Ïðîâåðèòü, ÷òî êîëè÷åñòâî îòëîæåííûõ òîâàðîâ ðàâíî 1", () -> {
+        step("ÃÃ°Ã®Ã¢Ã¥Ã°Ã¨Ã²Ã¼, Ã·Ã²Ã® ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã®Ã²Ã«Ã®Ã¦Ã¥Ã­Ã­Ã»Ãµ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢ Ã°Ã Ã¢Ã­Ã® 1", () -> {
             mainPage.countProduct.shouldHave(text("1"));
         });
 
-        step("Ïðîâåðèòü, ÷òî êîëè÷åñòâî òîâàðà â êîðçèíå íå èçìåíèëîñü", () -> {
+        step("ÃÃ°Ã®Ã¢Ã¥Ã°Ã¨Ã²Ã¼, Ã·Ã²Ã® ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã²Ã®Ã¢Ã Ã°Ã  Ã¢ ÃªÃ®Ã°Ã§Ã¨Ã­Ã¥ Ã­Ã¥ Ã¨Ã§Ã¬Ã¥Ã­Ã¨Ã«Ã®Ã±Ã¼", () -> {
             mainPage.countProductInCart.shouldHave(text("0"));
         });
 
@@ -83,20 +83,20 @@ public class AptekaTest {
     }
 
     @Test
-    @DisplayName("Ïåðåõîä ïî ïîäêàòåãîðèÿì â êàòàëîãå òîâàðîâ")
-    @Feature("Êàòàëîã òîâàðîâ")
-    @Story("Ïîäêàòåãîðèè")
+    @DisplayName("ÃÃ¥Ã°Ã¥ÃµÃ®Ã¤ Ã¯Ã® Ã¯Ã®Ã¤ÃªÃ Ã²Ã¥Ã£Ã®Ã°Ã¨Ã¿Ã¬ Ã¢ ÃªÃ Ã²Ã Ã«Ã®Ã£Ã¥ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢")
+    @Feature("ÃŠÃ Ã²Ã Ã«Ã®Ã£ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢")
+    @Story("ÃÃ®Ã¤ÃªÃ Ã²Ã¥Ã£Ã®Ã°Ã¨Ã¨")
     public void shouldOpenCatalogTab() {
-        step("Íàâåñòè êóðñîð íà âêëàäêó", () -> {
-            $(byText("Êîñìåòèêà")).shouldBe(visible).hover();
+        step("ÃÃ Ã¢Ã¥Ã±Ã²Ã¨ ÃªÃ³Ã°Ã±Ã®Ã° Ã­Ã  Ã¢ÃªÃ«Ã Ã¤ÃªÃ³", () -> {
+            $(byText("ÃŠÃ®Ã±Ã¬Ã¥Ã²Ã¨ÃªÃ ")).shouldBe(visible).hover();
         });
 
-        step("Êëèêíóòü íà ïîÿâèâøóþñÿ ïîäêàòåãîðèþ", () -> {
-            $(byText("Äåçîäîðàíòû")).shouldBe(visible).click();
+        step("ÃŠÃ«Ã¨ÃªÃ­Ã³Ã²Ã¼ Ã­Ã  Ã¯Ã®Ã¿Ã¢Ã¨Ã¢Ã¸Ã³Ã¾Ã±Ã¿ Ã¯Ã®Ã¤ÃªÃ Ã²Ã¥Ã£Ã®Ã°Ã¨Ã¾", () -> {
+            $(byText("Ã„Ã¥Ã§Ã®Ã¤Ã®Ã°Ã Ã­Ã²Ã»")).shouldBe(visible).click();
         });
 
-        step("Ïðîâåðèòü, ÷òî ïðîèçîøåë ïåðåõîä â íóæíóþ êàòåãîðèþ òîâàðîâ", () -> {
-            findPage.header.shouldHave(text("Äåçîäîðàíòû"));
+        step("ÃÃ°Ã®Ã¢Ã¥Ã°Ã¨Ã²Ã¼, Ã·Ã²Ã® Ã¯Ã°Ã®Ã¨Ã§Ã®Ã¸Ã¥Ã« Ã¯Ã¥Ã°Ã¥ÃµÃ®Ã¤ Ã¢ Ã­Ã³Ã¦Ã­Ã³Ã¾ ÃªÃ Ã²Ã¥Ã£Ã®Ã°Ã¨Ã¾ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢", () -> {
+            findPage.header.shouldHave(text("Ã„Ã¥Ã§Ã®Ã¤Ã®Ã°Ã Ã­Ã²Ã»"));
         });
 
 
